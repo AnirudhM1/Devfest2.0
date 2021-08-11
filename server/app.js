@@ -1,13 +1,29 @@
-const morgan = require("morgan");
-const cors = require("cors");
-require("dotenv").config();
-require("./config/dbconfig");
-const app = require("express")();
+// Importing libraries
+const express = require('express');
+const app = express();
+const cors = require('cors');
 
+// Dev dependencies 
+if (process.env.NODE_ENV !== 'production') {
+	const morgan = require('morgan');
+	app.use(morgan('dev'));
+	require('dotenv').config();
+}
+
+// Config
+require('./config/dbconfig');
+
+// Middleware
 app.use(cors());
-app.use(morgan("dev"));
 
-const port = process.env.PORT
-app.listen(port,()=>{
-    console.log("Connected to port ", port);
+// Home route
+app.get('/', (req, res) => {
+	res.send('HOME ROUTE');
 })
+
+
+const PORT = process.env.PORT || 8000;
+app.listen(PORT ,() => {
+    console.log("Connected to port", PORT);
+})
+

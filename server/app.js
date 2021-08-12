@@ -2,22 +2,21 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/auth");
 const rateLimit = require("express-rate-limit");
-require("dotenv").config();
+
 // Dev dependencies
-// if (process.env.NODE_ENV !== "production") {
-//   const morgan = require("morgan");
-//   require("dotenv").config();
-// }
+if (process.env.NODE_ENV !== "production") {
+  const morgan = require("morgan");
+  app.use(morgan('dev'));
+  require("dotenv").config();
+}
 
 // Config
 require("./config/dbconfig");
 
 // Middleware
-app.use(morgan("dev"));
 app.use(cors());
 app.use(
   rateLimit({

@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import App from './App';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import AuthProvider from './Hooks/AuthProvider';
 
 ReactDOM.render(
    <React.StrictMode>
-      <App />
+      <Router>
+         <Switch>
+            <AuthProvider>
+               <Route path="/app">
+                  <App />
+               </Route>
+               <Route path="/app1">
+                  <App />
+               </Route>
+            </AuthProvider>
+         </Switch>
+      </Router>
    </React.StrictMode>,
    document.getElementById('root'),
 );

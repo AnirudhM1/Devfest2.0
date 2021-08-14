@@ -4,20 +4,25 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import AuthProvider from './Hooks/AuthProvider';
-
+import Project from './components/Project';
+import Schedule from './components/Schedule';
+import Expense from './components/Expense';
 ReactDOM.render(
    <React.StrictMode>
       <Router>
          <Switch>
-            <AuthProvider>
-               <Route path="/app">
-                  <App />
-               </Route>
-               <Route path="/app1">
-                  <App />
-               </Route>
-            </AuthProvider>
+            <Route path="/app">
+               <App />
+            </Route>
+            <Route path="/project">
+               <Project />
+            </Route>
+            <Route path="/schedule">
+               <Schedule />
+            </Route>
+            <Route path="/expense">
+               <Expense />
+            </Route>
          </Switch>
       </Router>
    </React.StrictMode>,

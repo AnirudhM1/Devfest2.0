@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 const Welcome = () => {
    return (
       <div>
-         <h1>Welcome to company</h1>
-         <Link to="/login">Login</Link>
+         <iframe
+            src="https://my.spline.design/bunnycopy-0237a11202fa5ccae22acc387e5c1ace/"
+            width="1000px"
+            height="1000px"
+         ></iframe>
+         {/* <Link to="/login">Login</Link> */}
       </div>
    );
 };

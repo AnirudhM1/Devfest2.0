@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { loginController } = require("../controllers/auth");
+const { loginController, googleController } = require("../controllers/auth");
 const { info } = require("../util/Info");
 
 const authCheck = async (req, res, next) => {
@@ -15,6 +15,8 @@ const authCheck = async (req, res, next) => {
     next(err);
   }
 };
+
+router.get("/google", googleController);
 
 router.use(authCheck);
 

@@ -14,9 +14,6 @@ ReactDOM.render(
                <Route path="/app">
                   <App />
                </Route>
-               <Route path="/app1">
-                  <App />
-               </Route>
             </AuthProvider>
          </Switch>
       </Router>

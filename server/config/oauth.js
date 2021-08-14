@@ -9,10 +9,8 @@ async function oauth(req, next) {
       process.env.CLIENT_SECRET,
       `${process.env.CLIENT}/google/callback`
     );
-    console.log(url);
     const {tokens} = await oauthClient.getToken(code);
     const data = await decode(tokens.id_token);
-    console.log(data);
     return data;
   } catch (error) {
     next(error);

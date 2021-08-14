@@ -24,7 +24,7 @@ module.exports.googleController = async (req, res, next) =>{
     const {email, name} = await oauth(req, next);
     const user = await User.findOne({ email });
     if (user) {
-      const oauth = await createAppToken({email, name})
+      const oauth = await createAppToken({email, name});
       res.status(200).json({ message: "User already exists", oauth });
     } else {
       const newUser = new User({email, name});

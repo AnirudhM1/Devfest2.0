@@ -5,7 +5,7 @@ const { info } = require("../util/Info");
 const authCheck = async (req, res, next) => {
   const jwt = req.method === "GET" ? req.headers.jwt : req.body.headers.jwt;
   try {
-    const value = info(jwt)
+    const value = info(jwt);
     if (value) {
       next();
     } else {

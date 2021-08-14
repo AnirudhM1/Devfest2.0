@@ -9,8 +9,8 @@ module.exports.loginController = async (req, res, next) => {
     if (user) {
       res.status(200).json({ message: "Username already exists" });
     } else {
-      const newUser = new User({email});
-      const result =await newUser.save();
+      const newUser = new User({ email });
+      const result = await newUser.save();
       res.status(200).json({ message: "New user created" });
     }
   } catch (error) {

@@ -27,7 +27,7 @@ const Callback = () => {
          .catch(() => {
             history.push('/');
          });
-   });
+   }, []);
    return (
       <div>
          <h1>Processing</h1>

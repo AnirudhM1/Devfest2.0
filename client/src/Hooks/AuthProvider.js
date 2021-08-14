@@ -1,11 +1,12 @@
 import { verify } from 'jsonwebtoken';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Sawo from '../components/Sawo';
 import Callback from '../components/Callback';
 import { Route, useHistory } from 'react-router-dom';
 const AuthContext = createContext();
 const StateContext = createContext();
+import Welcome from '../components/Welcome';
+import Login from '../components/Login';
 
 export function useAuth() {
    return useContext(StateContext);
@@ -28,7 +29,10 @@ export default function AuthProvider({ children }) {
       <AuthContext.Provider value={auth}>
          <StateContext.Provider value={setAuth}>
             <Route exact path="/">
-               <Sawo />
+               <Welcome />
+            </Route>
+            <Route path="/login">
+               <Login />
             </Route>
             <Route path="/google/callback">
                <Callback />

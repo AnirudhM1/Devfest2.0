@@ -1,5 +1,5 @@
 const { google } = require("googleapis");
-const {decode, verify, sign} = require("jsonwebtoken");
+const {decode, sign} = require("jsonwebtoken");
 
 async function oauth(req, next) {
   try {

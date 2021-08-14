@@ -2,7 +2,8 @@
 Contains code related to the hackathon in Devfest 2.0
 
 For client side file structure in  src folder is:
-```├── assets
+```
+├── assets
 ├── components
 │   └── myComponent
 │       ├── myComponent.css
@@ -10,4 +11,5 @@ For client side file structure in  src folder is:
 └── sections
     └── mySection
         ├── mySection.css
-        └── mySection.js```
+        └── mySection.js
+```

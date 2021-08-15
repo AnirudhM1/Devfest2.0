@@ -4,7 +4,12 @@ const Schema = mongoose.Schema;
 const taskSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
+    },
+    parentProject: {
+        type: Schema.Types.ObjectId,
+        ref: 'Project'
     },
     name: {
         type: String,
@@ -18,8 +23,10 @@ const taskSchema = new Schema({
     description: String,
     priority: {
         type: String,
-        enum: ['high', 'medium', 'low', 'unrated'],
+        enum: ['Urgent', 'Important', 'Overdue', 'unrated'],
         default: 'unrated'
     },
     deadline: Schema.Types.Date
-})
+});
+
+module.exports = mongoose.model('Task', taskSchema);

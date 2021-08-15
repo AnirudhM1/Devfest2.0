@@ -20,5 +20,18 @@ async function oauth(req, next) {
 async function createAppToken(payload){
   return await sign(payload, process.env.secret)
 }
+const authCheck = async (req, res, next) => {
+  const jwt = req.method === "GET" ? req.headers.jwt : req.body.headers.jwt;
+  try {
+    const value = info(jwt);
+    if (value) {
+      next();
+    } else {
+      throw Error("Unauthorized");
+    }
+  } catch (err) {
+    next(err);
+  }
+};
 
-module.exports = {oauth, createAppToken};
+module.exports = {oauth, createAppToken, authCheck};

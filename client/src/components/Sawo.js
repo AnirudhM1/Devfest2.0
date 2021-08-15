@@ -25,7 +25,6 @@ export default function Sawo() {
             },
          })
          .then(res => {
-            console.log(res);
             localStorage.setItem('jwt', res.data.jwt);
             setAuth(true);
             history.push('/app');

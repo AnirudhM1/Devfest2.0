@@ -9,11 +9,10 @@ mongoose.connect(
         useUnifiedTopology: true,
         useFindAndModify: false
     }
-);
+).catch((e) => console.error('Error:', e))
 
 // Checking if mongoose is connected to the database
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
     console.log('Database connected');
 });

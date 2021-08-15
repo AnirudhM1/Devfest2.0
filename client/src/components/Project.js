@@ -2,8 +2,11 @@ import React from 'react';
 import Navbar from './Navbar';
 import { useState } from 'react';
 import TopNavbar from './TopNavbar';
+// import axios from 'axios';
 import './Project.css';
+// import { useHistory } from 'react-router';
 const Project = () => {
+   // const history = useHistory();
    const [PName, setPName] = useState('');
    const [CName, setCName] = useState('');
    const [date, setDate] = useState('');
@@ -11,16 +14,42 @@ const Project = () => {
    const [budget, setBudget] = useState('');
    const [projectTask, setProjectTask] = useState([]);
    const handleSubmit = e => {
-      // const data = { PName, CName, date, desc };
+      // const data = { PName, CName, date, desc, budget };
       e.preventDefault();
-      // fetch('/user', {
-      //    method: 'POST',
-      //    headers: { 'Content-Type': 'application/json' },
-      //    body: JSON.stringify(data),
-      // })
-      //    .then(response => response.json())
-      //    .then(data => {});
+      // axios
+      //    .post(`${process.env.REACT_APP_SERVER}/user/project`, {
+      //       headers: {
+      //          jwt: localStorage.getItem('jwt'),
+      //       },
+      //       body: data,
+      //    })
+      //    .then(res => {
+      //       console.log(res);
+      //    })
+      //    .catch(err => {
+      //       console.log(err);
+      //       history.push('/');
+      //    });
    };
+   const handleTaskSubmit = e => {
+      // const data = { PName, CName, date, desc, budget };
+      e.preventDefault();
+      // axios
+      //    .post(`${process.env.REACT_APP_SERVER}/user/project`, {
+      //       headers: {
+      //          jwt: localStorage.getItem('jwt'),
+      //       },
+      //       body: data,
+      //    })
+      //    .then(res => {
+      //       console.log(res);
+      //    })
+      //    .catch(err => {
+      //       console.log(err);
+      //       history.push('/');
+      //    });
+   };
+
    return (
       <div className="app-parent">
          <div className="welcome-body">
@@ -74,7 +103,7 @@ const Project = () => {
                   <div className="input-project">
                      <div className="addNewProject">Add A New Project</div>
 
-                     <form onSubmit={handleSubmit}>
+                     <form onSubmit={handleTaskSubmit}>
                         <div className="form">
                            <div className="name-date-desc-parent">
                               <div className="name-date">

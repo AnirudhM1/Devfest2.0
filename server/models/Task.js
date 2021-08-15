@@ -7,10 +7,10 @@ const taskSchema = new Schema({
         ref: 'User',
         required: true
     },
-    parentProject: {
-        type: Schema.Types.ObjectId,
-        ref: 'Project'
-    },
+    // parentProject: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Project'
+    // },
     name: {
         type: String,
         required: true

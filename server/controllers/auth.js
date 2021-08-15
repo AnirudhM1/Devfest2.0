@@ -1,4 +1,3 @@
-const { info } = require("../util/Info");
 const User = require("../models/User");
 const { oauth, createAppToken } = require("../config/oauth");
 

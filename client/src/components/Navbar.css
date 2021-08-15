@@ -1,0 +1,17 @@
+.main-parent {
+   border-radius: 25px;
+   height: 100%;
+}
+.navbar-export {
+   height: 72%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+}
+.logo {
+   height: 16%;
+}
+.log-out {
+   margin-top: 16px;
+   height: 16%;
+}

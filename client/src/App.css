@@ -1,38 +1,80 @@
-.App {
-   text-align: center;
+.app-parent {
+   background-image: linear-gradient(
+      to bottom right,
+      rgb(187, 243, 238),
+      rgb(221, 221, 221),
+      rgb(203, 157, 212)
+   );
+   height: 100vh;
+   padding: 40px;
 }
-
-.App-logo {
-   height: 40vmin;
-   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-   .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-   }
-}
-
-.App-header {
-   background-color: #282c34;
-   min-height: 100vh;
+.welcome-body {
    display: flex;
-   flex-direction: column;
-   align-items: center;
+   height: 100%;
+   width: 100%;
+   background-color: rgba(255, 255, 255, 0.342);
+   border-radius: 25px;
+}
+.navbar-parent {
+   width: 6%;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 0.356);
+   border-radius: 15px;
+}
+.body-parent {
+   width: 94%;
+}
+.heading {
+   padding: 10px;
+   padding-top: 0;
+   margin-bottom: 10px;
+   display: flex;
    justify-content: center;
-   font-size: calc(10px + 2vmin);
-   color: white;
+}
+.welcome-card-body {
+   display: flex;
+   height: 84%;
+   width: 100%;
+}
+.app-top-navbar {
+   margin-bottom: 16px;
+   height: 10%;
 }
 
-.App-link {
-   color: #61dafb;
+.reminder {
+   width: 18%;
+   background-color: rgba(148, 173, 221, 0.418);
+   height: 100%;
+   margin-left: 2%;
+}
+.welcome-and-message-parent {
+   width: 33%;
+   height: 100%;
+   margin-left: 2%;
+}
+.project-and-expense {
+   width: 40%;
+   height: 100%;
+   margin-left: 2%;
+}
+.welcomeCard {
+   background-color: rgba(167, 197, 253, 0.418);
+   height: 32%;
+   margin-bottom: 4%;
 }
 
-@keyframes App-logo-spin {
-   from {
-      transform: rotate(0deg);
-   }
-   to {
-      transform: rotate(360deg);
-   }
+.messagesCard {
+   background-color: rgba(68, 105, 173, 0.418);
+   height: 65%;
+}
+
+.projectsCard {
+   background-color: rgba(52, 79, 129, 0.418);
+   height: 48%;
+   margin-bottom: 4%;
+}
+
+.expensesCard {
+   background-color: rgba(167, 197, 253, 0.418);
+   height: 48%;
 }

@@ -1,13 +1,16 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const expenseSchema = new Schema({
-    date: Schema.Types.Date,
-    method: String, // Method of payment
-    recipient: String, // Payed to
-    description: String,
-    amount: Number,
-    subTotal: Number
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
+  date: Schema.Types.Date,
+  method: String, // Method of payment
+  recipient: String, // Payed to
+  description: String,
+  amount: Number,
 });
 
-module.exports = mongoose.model('Expense', expenseSchema);
+module.exports = mongoose.model("Expense", expenseSchema);

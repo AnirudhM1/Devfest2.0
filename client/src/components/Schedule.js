@@ -2,10 +2,27 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import TopNavbar from './TopNavbar';
 import './Schedule.css';
+// import axios from 'axios';
+// import { useHistory } from 'react-router';
 const Schedule = () => {
+   // const history = useHistory();
    const handleSubmit = e => {
-      // const data = { PName, CName, date, desc };
+      // const data = { PName, CName, date, desc, budget };
       e.preventDefault();
+      // axios
+      //    .post(`${process.env.REACT_APP_SERVER}/user/project`, {
+      //       headers: {
+      //          jwt: localStorage.getItem('jwt'),
+      //       },
+      //       body: data,
+      //    })
+      //    .then(res => {
+      //       console.log(res);
+      //    })
+      //    .catch(err => {
+      //       console.log(err);
+      //       history.push('/');
+      //    });
    };
    const [task, setTask] = useState('');
    const [dueDate, setDueDate] = useState('');

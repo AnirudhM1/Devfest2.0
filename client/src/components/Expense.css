@@ -4,3 +4,50 @@
 .write {
    display: flex;
 }
+
+.expense-body {
+   height: 82%;
+}
+
+.summary-and-add {
+   height: 100%;
+   margin-left: 3%;
+   width: 60%;
+}
+
+.summary-container {
+   background-color: rgba(225, 155, 243, 0.253);
+   height: 25%;
+}
+
+.upcomingTran-container {
+   background-color: rgba(225, 155, 243, 0.253);
+   height: 100%;
+   margin-left: 3%;
+   width: 40%;
+}
+
+.write {
+   height: 69%;
+   margin-top: 4%;
+}
+
+.add-transaction-container {
+   background-color: rgba(225, 155, 243, 0.253);
+   height: 100%;
+   width: 65%;
+}
+
+.upcomingTran-container {
+   background-color: rgba(225, 155, 243, 0.253);
+}
+
+.recent-container {
+   background-color: rgba(225, 155, 243, 0.253);
+   width: 32%;
+   margin-left: 3%;
+}
+
+.upcoming-dues {
+   height: 55%;
+}

@@ -7,6 +7,7 @@ const TopNavbar = () => {
    const path = location.pathname;
    const [title, setTitle] = useState('');
    useEffect(() => {
+      // const { name } = atob(localStorage.getItem('jwt').split['.'][1]);
       if (path === '/app') {
          setTitle('Insights');
       } else if (path === '/project') {

@@ -35,3 +35,8 @@
    background-color: rgba(153, 245, 153, 0.267);
    height: 46%;
 }
+.compose-form-body {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}

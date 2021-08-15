@@ -2,8 +2,8 @@ import React from 'react';
 import Navbar from './Navbar';
 import { useState } from 'react';
 import TopNavbar from './TopNavbar';
-// import axios from 'axios';
 import './Project.css';
+// import axios from 'axios';
 // import { useHistory } from 'react-router';
 const Project = () => {
    // const history = useHistory();
@@ -13,6 +13,7 @@ const Project = () => {
    const [desc, setDesc] = useState('');
    const [budget, setBudget] = useState('');
    const [projectTask, setProjectTask] = useState([]);
+   // const [data, error] = useFetch(`${process.env.REACT_APP_SE})
    const handleSubmit = e => {
       // const data = { PName, CName, date, desc, budget };
       e.preventDefault();
@@ -82,7 +83,9 @@ const Project = () => {
                                        ></input>
                                     </div>
                                     <div className="button">
-                                       <button>+</button>
+                                       <button onClick={handleTaskSubmit}>
+                                          +
+                                       </button>
                                     </div>
                                  </div>
                               </div>
@@ -103,7 +106,7 @@ const Project = () => {
                   <div className="input-project">
                      <div className="addNewProject">Add A New Project</div>
 
-                     <form onSubmit={handleTaskSubmit}>
+                     <form onSubmit={handleSubmit}>
                         <div className="form">
                            <div className="name-date-desc-parent">
                               <div className="name-date">
@@ -175,9 +178,11 @@ const Project = () => {
                                     ></input>
                                  </div>
                               </div>
-                           </div>
-                           <div className="button">
-                              <button>+</button>
+                              <div className="button">
+                                 <button className="submit-button">
+                                    Submit
+                                 </button>
+                              </div>
                            </div>
                         </div>
                      </form>

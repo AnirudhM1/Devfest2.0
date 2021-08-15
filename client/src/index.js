@@ -13,7 +13,6 @@ ReactDOM.render(
    <React.StrictMode>
       <Router>
          <Switch>
-<<<<<<< HEAD
             <Route path="/app">
                <App />
             </Route>
@@ -29,13 +28,6 @@ ReactDOM.render(
             <Route path="/message">
                <Message />
             </Route>
-=======
-            <AuthProvider>
-               <Route path="/app">
-                  <App />
-               </Route>
-            </AuthProvider>
->>>>>>> main
          </Switch>
       </Router>
    </React.StrictMode>,

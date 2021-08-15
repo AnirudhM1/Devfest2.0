@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import TopNavbar from './TopNavbar';
 import './Expense.css';
+// import axios from 'axios';
+// import { useHistory } from 'react-router';
 const Expense = () => {
+   // const history = useHistory();
+   // const [data, error] = useFetch(`${process.env.REACT_APP_SERVER}/user/expense`)
    const [amount, setAmount] = useState('');
    const [amountFor, setAmountFor] = useState('');
    const [amountDate, setAmountDate] = useState('');
@@ -14,26 +18,40 @@ const Expense = () => {
    // const dueData = { amount, amountFor, amountDate };
    // const tData = { Tamount, amountTo, Tdesc, tChoice };
    const handleSubmit = e => {
-      // const data = { PName, CName, date, desc };
+      // const data = { PName, CName, date, desc, budget };
       e.preventDefault();
-      // fetch('/user', {
-      //    method: 'POST',
-      //    headers: { 'Content-Type': 'application/json' },
-      //    body: JSON.stringify(data),
-      // })
-      //    .then(response => response.json())
-      //    .then(data => {});
+      // axios
+      //    .post(`${process.env.REACT_APP_SERVER}/user/project`, {
+      //       headers: {
+      //          jwt: localStorage.getItem('jwt'),
+      //       },
+      //       body: data,
+      //    })
+      //    .then(res => {
+      //       console.log(res);
+      //    })
+      //    .catch(err => {
+      //       console.log(err);
+      //       history.push('/');
+      //    });
    };
    const handleTransaction = e => {
-      // const data = { PName, CName, date, desc };
+      // const data = { PName, CName, date, desc, budget };
       e.preventDefault();
-      // fetch('/user', {
-      //    method: 'POST',
-      //    headers: { 'Content-Type': 'application/json' },
-      //    body: JSON.stringify(data),
-      // })
-      //    .then(response => response.json())
-      //    .then(data => {});
+      // axios
+      //    .post(`${process.env.REACT_APP_SERVER}/user/project`, {
+      //       headers: {
+      //          jwt: localStorage.getItem('jwt'),
+      //       },
+      //       body: data,
+      //    })
+      //    .then(res => {
+      //       console.log(res);
+      //    })
+      //    .catch(err => {
+      //       console.log(err);
+      //       history.push('/');
+      //    });
    };
    return (
       <div className="app-parent">

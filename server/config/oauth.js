@@ -1,5 +1,6 @@
 const { google } = require("googleapis");
-const {decode, sign} = require("jsonwebtoken");
+const { decode, sign } = require("jsonwebtoken");
+const { info } = require("../util/Info");
 
 async function oauth(req, next) {
   try {
@@ -9,7 +10,7 @@ async function oauth(req, next) {
       process.env.CLIENT_SECRET,
       `${process.env.CLIENT}/google/callback`
     );
-    const {tokens} = await oauthClient.getToken(code);
+    const { tokens } = await oauthClient.getToken(code);
     const data = await decode(tokens.id_token);
     return data;
   } catch (error) {
@@ -17,13 +18,14 @@ async function oauth(req, next) {
   }
 }
 
-async function createAppToken(payload){
-  return await sign(payload, process.env.secret)
+async function createAppToken(payload) {
+  return await sign(payload, process.env.secret);
 }
+
 const authCheck = async (req, res, next) => {
   const jwt = req.method === "GET" ? req.headers.jwt : req.body.headers.jwt;
   try {
-    const value = info(jwt);
+    const value = await info(jwt);
     if (value) {
       next();
     } else {
@@ -34,4 +36,4 @@ const authCheck = async (req, res, next) => {
   }
 };
 
-module.exports = {oauth, createAppToken, authCheck};
+module.exports = { oauth, createAppToken, authCheck };

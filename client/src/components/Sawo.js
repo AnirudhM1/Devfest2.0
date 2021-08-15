@@ -8,9 +8,11 @@ export default function Sawo() {
    const setAuth = useAuth();
    const history = useHistory();
    async function successLogin(payload) {
+      console.log(payload);
       const { identifier, verification_token } = payload;
+      const { Name } = payload.customFieldInput;
       const jwt = await sign(
-         { email: identifier, verification_token },
+         { email: identifier, verification_token, name: Name },
          process.env.REACT_APP_JWT,
       );
       localStorage.setItem('jwt', jwt);

@@ -1,13 +1,12 @@
 import { verify } from 'jsonwebtoken';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-// import Sawo from '../components/Sawo';
+import Callback from '../components/Callback';
 import { Route, useHistory } from 'react-router-dom';
 const AuthContext = createContext();
 const StateContext = createContext();
 import Welcome from '../components/Welcome';
 import Login from '../components/Login';
-import Callback from '../components/Callback';
 
 export function useAuth() {
    return useContext(StateContext);

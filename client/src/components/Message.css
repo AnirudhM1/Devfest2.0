@@ -1,0 +1,37 @@
+.message-page-body {
+   display: flex;
+   height: 84%;
+   width: 100%;
+}
+.msg-col-1 {
+   height: 98.8%;
+   width: 60%;
+   margin-left: 3%;
+}
+.msg-col-2 {
+   height: 100%;
+   width: 31%;
+   margin-left: 3%;
+}
+
+.selected {
+   background-color: rgba(238, 137, 221, 0.267);
+   height: 61%;
+   margin-bottom: 2.5%;
+}
+
+.compose-container {
+   background-color: rgba(238, 137, 221, 0.267);
+   height: 36.5%;
+}
+
+.inbox-container {
+   background-color: rgba(153, 245, 153, 0.267);
+   height: 50%;
+   margin-bottom: 5%;
+}
+
+.outbox-container {
+   background-color: rgba(153, 245, 153, 0.267);
+   height: 46%;
+}

@@ -1,0 +1,75 @@
+.schedule-body {
+   display: flex;
+   height: 84%;
+}
+
+.priority {
+   width: 30%;
+   height: 100%;
+   background-color: rgba(172, 190, 238, 0.767);
+   margin-left: 2%;
+}
+
+.not-priority {
+   height: 100%;
+   width: 66%;
+}
+.today-task {
+   width: 46%;
+   height: 100%;
+   background-color: rgba(172, 190, 238, 0.767);
+   margin-left: 3%;
+}
+.task-form-body {
+   display: flex;
+}
+.today-and-up {
+   display: flex;
+   height: 76%;
+   width: 100%;
+}
+.upcoming {
+   width: 46%;
+   height: 100%;
+   background-color: rgba(172, 190, 238, 0.767);
+   margin-left: 3%;
+}
+
+.overdue-box {
+   width: 94%;
+   height: 28%;
+   margin-right: 3%;
+   margin-left: 3%;
+   margin-top: 3%;
+   background-color: rgba(233, 88, 88, 0.767);
+}
+
+.important-box {
+   width: 94%;
+   height: 28%;
+   margin-right: 3%;
+   margin-left: 3%;
+   margin-top: 2%;
+   background-color: rgba(236, 60, 16, 0.767);
+}
+
+.urgent-box {
+   width: 94%;
+   height: 28%;
+   margin-right: 3%;
+   margin-left: 3%;
+   margin-top: 2%;
+   background-color: rgba(225, 236, 67, 0.767);
+}
+
+.task-form {
+   background-color: red;
+   margin-left: 3%;
+   width: 95%;
+   height: 100%;
+}
+
+.form-tag-height {
+   height: 20%;
+   margin-top: 3%;
+}

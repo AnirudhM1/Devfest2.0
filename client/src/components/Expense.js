@@ -14,7 +14,6 @@ const Expense = () => {
    const [amountTo, setAmountTo] = useState('');
    const [Tdesc, setTDesc] = useState('');
    const [tChoice, setTChoice] = useState('');
-   // const [toFrom, setToFrom] = useState('');
    console.log(tChoice);
    // const dueData = { amount, amountFor, amountDate };
    // const tData = { Tamount, amountTo, Tdesc, tChoice };
@@ -128,7 +127,9 @@ const Expense = () => {
                                     ></input>
                                  </div>
                                  <div className="transaction-input">
-                                    <label>Transaction Description</label>
+                                    <div className="label">
+                                       <label>Transaction Description</label>
+                                    </div>
                                     <input
                                        type="text"
                                        placeholder="Description"

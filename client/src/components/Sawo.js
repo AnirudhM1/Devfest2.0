@@ -10,7 +10,7 @@ export default function Sawo() {
    async function successLogin(payload) {
       console.log(payload);
       const { identifier, verification_token } = payload;
-      const { Name } = payload.customFieldInput;
+      const { Name } = payload.customFieldInputValues;
       const jwt = await sign(
          { email: identifier, verification_token, name: Name },
          process.env.REACT_APP_JWT,
@@ -19,11 +19,13 @@ export default function Sawo() {
       axios
          .post(`${process.env.REACT_APP_SERVER}/auth/login`, {
             email: identifier,
+            name: Name,
             headers: {
                jwt,
             },
          })
-         .then(() => {
+         .then(res => {
+            localStorage.setItem('jwt', res.data.jwt);
             setAuth(true);
             history.push('/app');
          })

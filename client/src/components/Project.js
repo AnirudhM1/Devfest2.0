@@ -3,34 +3,45 @@ import Navbar from './Navbar';
 import { useState } from 'react';
 import TopNavbar from './TopNavbar';
 import './Project.css';
-// import axios from 'axios';
-// import { useHistory } from 'react-router';
+// import useFetch from '../Hooks/useFetch';
+import axios from 'axios';
+import { useHistory } from 'react-router';
 const Project = () => {
-   // const history = useHistory();
+   const history = useHistory();
    const [PName, setPName] = useState('');
    const [CName, setCName] = useState('');
    const [date, setDate] = useState('');
    const [desc, setDesc] = useState('');
    const [budget, setBudget] = useState('');
    const [projectTask, setProjectTask] = useState([]);
-   // const [data, error] = useFetch(`${process.env.REACT_APP_SERVER}`/user/project)
+   const url = `${process.env.REACT_APP_SERVER}/user/project`;
+   // const [data, error] = useFetch(url);
+   const data = axios
+      .get(url, { headers: { jwt: localStorage.getItem('jwt') } })
+      .then(res => res.data);
+   console.log(data);
+   // console.log(error);
    const handleSubmit = e => {
-      // const data = { PName, CName, date, desc, budget };
+      const data = {
+         name: PName,
+         client: CName,
+         deadline: date,
+         description: desc,
+         budget,
+         headers: {
+            jwt: localStorage.getItem('jwt'),
+         },
+      };
       e.preventDefault();
-      // axios
-      //    .post(`${process.env.REACT_APP_SERVER}/user/project`, {
-      //       headers: {
-      //          jwt: localStorage.getItem('jwt'),
-      //       },
-      //       body: data,
-      //    })
-      //    .then(res => {
-      //       console.log(res);
-      //    })
-      //    .catch(err => {
-      //       console.log(err);
-      //       history.push('/');
-      //    });
+      axios
+         .post(`${process.env.REACT_APP_SERVER}/user/project`, data)
+         .then(res => {
+            console.log(res.data);
+         })
+         .catch(err => {
+            console.log(err);
+            history.push('/');
+         });
    };
    const handleTaskSubmit = e => {
       // const data = { PName, CName, date, desc, budget };

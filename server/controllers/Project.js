@@ -3,6 +3,7 @@ const Task = require("../models/Task");
 const { info } = require("../util/Info");
 
 module.exports.getAllProjects = async (req, res) => {
+  console.log("Request recieved");
   const jwt = req.headers.jwt;
   const user = await info(jwt);
   const projects = await Project.find({ user: user.id });
@@ -12,7 +13,10 @@ module.exports.getAllProjects = async (req, res) => {
 module.exports.createProject = async (req, res) => {
   const jwt = req.body.headers.jwt;
   const user = await info(jwt);
+  console.log({ user });
   const { name, client, description, deadline, budget } = req.body;
+  console.log({ body: req.body });
+  console.log({ name, client, description, deadline, budget });
   const status = req.body.status || 0;
   const tasks = [];
   const currentSpending = req.body.currentSpending || 0;

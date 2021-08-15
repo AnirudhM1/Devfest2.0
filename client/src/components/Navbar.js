@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './Navbar.css';
 const Navbar = () => {
+   const history = useHistory();
    return (
       <div className="main-parent">
          <div className="logo">
@@ -13,23 +14,51 @@ const Navbar = () => {
             />
          </div>
          <div className="navbar-export">
-            <div className="links">
-               <Link to="/app">Home</Link>
+            <div
+               className="links"
+               onClick={() => {
+                  history.push('/app');
+               }}
+            >
+               <i className="fas fa-home fa-2x"></i>
+               Home
             </div>
-            <div className="links">
-               <Link to="/project">Project</Link>
+            <div
+               className="links"
+               onClick={() => {
+                  history.push('/project');
+               }}
+            >
+               <i className="fas fa-chart-pie fa-2x"></i>Project
             </div>
-            <div className="links">
-               <Link to="/expense">Expenses</Link>
+            <div
+               className="links"
+               onClick={() => {
+                  history.push('/expense');
+               }}
+            >
+               <i className="fas fa-money-check-alt fa-2x"></i>Expenses
             </div>
-            <div className="links">
-               <Link to="/schedule">Tasks</Link>
+            <div
+               className="links"
+               onClick={() => {
+                  history.push('/schedule');
+               }}
+            >
+               <i className="fas fa-tasks fa-2x"></i> Tasks
             </div>
-            <div className="links">
-               <Link to="/message">Messages</Link>
+            <div
+               className="links"
+               onClick={() => {
+                  history.push('/message');
+               }}
+            >
+               <i className="fas fa-envelope fa-2x"></i>Messages
             </div>
          </div>
-         <div className="log-out">logout</div>
+         <div className="log-out">
+            <i className="fas fa-power-off fa-2x"></i>logout
+         </div>
       </div>
    );
 };

@@ -24,13 +24,14 @@ const TopNavbar = () => {
    }, []);
    return (
       <div className="top-navbar-parent">
-         <div className="company">
-            <div className="company-name">Skaber</div>
-         </div>
+         <div className="company-name">Skaber</div>
          <div className="title-class">{title}</div>
          <div className="profile">
             <div className="profile-pic"></div>
-            <div className="profile-name">Profile-name</div>
+            <div className="profile-name">
+               <i className="fas fa-user-circle"></i> User Name{' '}
+               <i className="fas fa-power-off"></i>
+            </div>
          </div>
       </div>
    );

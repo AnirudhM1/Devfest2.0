@@ -13,7 +13,7 @@ const Project = () => {
    const [desc, setDesc] = useState('');
    const [budget, setBudget] = useState('');
    const [projectTask, setProjectTask] = useState([]);
-   // const [data, error] = useFetch(`${process.env.REACT_APP_SE})
+   // const [data, error] = useFetch(`${process.env.REACT_APP_SERVER}`/user/project)
    const handleSubmit = e => {
       // const data = { PName, CName, date, desc, budget };
       e.preventDefault();
@@ -52,6 +52,7 @@ const Project = () => {
    };
 
    return (
+      // {data &&
       <div className="app-parent">
          <div className="welcome-body">
             <div className="navbar-parent">
@@ -66,7 +67,7 @@ const Project = () => {
                      <div className="current">
                         <div className="sub-heading">Project XYZ</div>
                         <div className="current-body-div">
-                           <div className="fetched-desc">fetched desc</div>
+                           <div className="fetched-desc">fetched desc{}</div>
                            <div className="other-details">
                               <div className="project-tasks-parent">
                                  project tasks
@@ -191,6 +192,7 @@ const Project = () => {
             </div>
          </div>
       </div>
+      // }
    );
 };
 

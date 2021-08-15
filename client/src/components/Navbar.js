@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 const Navbar = () => {
    return (
-      <div className="navbar-export">
+      <div className="main-parent">
          <div className="logo">
             <img
                src="https://storage.googleapis.com/restro/A0.png"
@@ -12,21 +12,24 @@ const Navbar = () => {
                width="100px"
             />
          </div>
-         <div className="links">
-            <Link to="/app">Home</Link>
+         <div className="navbar-export">
+            <div className="links">
+               <Link to="/app">Home</Link>
+            </div>
+            <div className="links">
+               <Link to="/project">Project</Link>
+            </div>
+            <div className="links">
+               <Link to="/expense">Expenses</Link>
+            </div>
+            <div className="links">
+               <Link to="/schedule">Tasks</Link>
+            </div>
+            <div className="links">
+               <Link to="/message">Messages</Link>
+            </div>
          </div>
-         <div className="links">
-            <Link to="/project">Project</Link>
-         </div>
-         <div className="links">
-            <Link to="/expense">Expenses</Link>
-         </div>
-         <div className="links">
-            <Link to="/schedule">Tasks</Link>
-         </div>
-         <div className="links">
-            <Link to="/message">Messages</Link>
-         </div>
+         <div className="log-out">logout</div>
       </div>
    );
 };

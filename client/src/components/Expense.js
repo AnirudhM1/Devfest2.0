@@ -14,6 +14,7 @@ const Expense = () => {
    const [amountTo, setAmountTo] = useState('');
    const [Tdesc, setTDesc] = useState('');
    const [tChoice, setTChoice] = useState('');
+   // const [toFrom, setToFrom] = useState('');
    console.log(tChoice);
    // const dueData = { amount, amountFor, amountDate };
    // const tData = { Tamount, amountTo, Tdesc, tChoice };
@@ -80,24 +81,26 @@ const Expense = () => {
                            </div>
                            <div className="transaction-input">
                               <form onSubmit={handleTransaction}>
-                                 <input
-                                    type="radio"
-                                    name="type"
-                                    value="debit"
-                                    onClick={() => {
-                                       setTChoice('debit');
-                                    }}
-                                 ></input>
-                                   <label>Debit</label> {' '}
-                                 <input
-                                    type="radio"
-                                    name="type"
-                                    value="credit"
-                                    onClick={() => {
-                                       setTChoice('credit');
-                                    }}
-                                 ></input>
-                                   <label>Credit</label>
+                                 <div className="radio-buttons">
+                                    <input
+                                       type="radio"
+                                       name="type"
+                                       value="debit"
+                                       onClick={() => {
+                                          setTChoice('debit');
+                                       }}
+                                    ></input>
+                                      <label>Debit</label> {' '}
+                                    <input
+                                       type="radio"
+                                       name="type"
+                                       value="credit"
+                                       onClick={() => {
+                                          setTChoice('credit');
+                                       }}
+                                    ></input>
+                                      <label>Credit</label>
+                                 </div>
                                  <div className="transaction-input">
                                     <label>Amount</label>
                                     <input

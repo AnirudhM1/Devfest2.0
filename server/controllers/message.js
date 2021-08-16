@@ -5,13 +5,9 @@ const { info } = require("../util/Info");
 module.exports.getIncoming = async (req, res, next) => {
   try {
     const { id } = await info(req.headers.jwt);
-    const docs = [];
-    const { incomingMessages } = await User.findById(id);
-    incomingMessages.forEach(async (messageId) => {
-      const doc = await Message.findById(messageId);
-      docs.push(doc);
-    });
-    res.status(200).json({ docs });
+    const user = await User.findById(id).populate("incomingMessages");
+    const messages = user.incomingMessages;
+    res.send(messages);
   } catch (err) {
     next(err);
   }
@@ -20,28 +16,39 @@ module.exports.getIncoming = async (req, res, next) => {
 module.exports.getSent = async (req, res, next) => {
   try {
     const { id } = await info(req.headers.jwt);
-    // const docs = [];
-    // const { sentMessages } = await User.findById(id);
-    // sentMessages.forEach(async (messageId) => {
-    //   const doc = await Message.findById(messageId);
-    //   docs.push(doc);
-    // });
-    // const user = await User.findById(id).populate("sentMessages");
-    // const messages = user.sentMessages;
-    // res.send(messages);
-    const pipeline = [
-      {
-        $match: {
-          sender: {
-            $eq: id,
-          },
-        },
-      },
-    ];
-    const docs = await Message.aggregate(pipeline);
-    res.status(200).json({ docs, id });
+    console.log({ id });
+    const user = await User.findById(id).populate("sentMessages");
+    const messages = user.sentMessages;
+    res.send(messages);
   } catch (error) {
     next(error);
+  }
+};
+
+module.exports.postMessage = async (req, res, next) => {
+  try {
+    const { composeTo, header, composeBody } = req.body;
+    const recipient = await User.findOne({ email: composeTo });
+    const { id } = await info(req.body.headers.jwt);
+    const sender = await User.findById(id);
+
+    const message = new Message({
+      sender: sender,
+      recipient: recipient,
+      message: composeBody,
+      header,
+    });
+
+    recipient.incomingMessages.push(message);
+    sender.sentMessages.push(message);
+    await recipient.save();
+    await sender.save();
+    await message.save();
+
+    res.status(201).send(message);
+  } catch (e) {
+    e.status = 400;
+    next(e);
   }
 };
 
@@ -50,6 +57,7 @@ module.exports.postIncoming = async (req, res, next) => {
     const { composeTo, header, composeBody } = req.body;
     const { _id } = await User.findOne({ email: composeTo });
     const { id } = await info(req.body.headers.jwt);
+
     const msg = new Message({
       sender: id,
       recipient: _id,

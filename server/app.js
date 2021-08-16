@@ -7,6 +7,7 @@ const messageRoutes = require("./routes/message");
 const authRoutes = require("./routes/auth");
 const taskRoutes = require("./routes/Task");
 const projectRoutes = require("./routes/Project");
+const expenseRoutes = require("./routes/Expense");
 const rateLimit = require("express-rate-limit");
 
 // Dev dependencies
@@ -36,6 +37,7 @@ app.use(bodyParser.json());
 app.use("/auth", authRoutes);
 app.use("/user/project", projectRoutes);
 app.use("/user/task", taskRoutes);
+app.use("/user/expense", expenseRoutes);
 app.use("/user/message", messageRoutes);
 
 app.get("/", (req, res) => res.send("Home Route"));

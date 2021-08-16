@@ -4,12 +4,14 @@ const taskController = require("../controllers/Task");
 const { authCheck } = require("../config/oauth");
 const catchAsync = require("../util/CatchAsync");
 
-router.get("/", authCheck, catchAsync(taskController.getAllTasks));
-router.post("/", authCheck, catchAsync(taskController.createTask, 400));
+router
+  .route("/")
+  .get(authCheck, taskController.getAllTasks)
+  .post(authCheck, taskController.createTask);
 
 router
   .route("/:taskId")
-  .get(authCheck, catchAsync(taskController.getTask))
-  .post(authCheck, catchAsync(taskController.updateTask));
+  .get(authCheck, taskController.getTask)
+  .post(authCheck, taskController.updateTask);
 
 module.exports = router;

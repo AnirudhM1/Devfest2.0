@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const messageRoutes = require("./routes/message");
 const authRoutes = require("./routes/auth");
 const taskRoutes = require("./routes/Task");
 const projectRoutes = require("./routes/Project");
@@ -37,6 +38,7 @@ app.use("/auth", authRoutes);
 app.use("/user/project", projectRoutes);
 app.use("/user/task", taskRoutes);
 app.use("/user/expense", expenseRoutes);
+app.use("/user/message", messageRoutes);
 
 app.get("/", (req, res) => res.send("Home Route"));
 

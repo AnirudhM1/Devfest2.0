@@ -71,7 +71,7 @@ module.exports.updateProject = async (req, res) => {
     const { projectId } = req.params;
     const checkProject = await Project.findById(projectId);
 
-    if (project.user != user.id)
+    if (checkProject.user != user.id)
       return res.status(401).json({ err: "User not authorized" });
 
     const {

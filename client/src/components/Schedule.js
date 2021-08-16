@@ -2,32 +2,33 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import TopNavbar from './TopNavbar';
 import './Schedule.css';
-// import axios from 'axios';
-// import { useHistory } from 'react-router';
+import axios from 'axios';
+import { useHistory } from 'react-router';
 const Schedule = () => {
-   // const history = useHistory();
+   const history = useHistory();
    const handleSubmit = e => {
-      // const data = { PName, CName, date, desc, budget };
+      const data = {
+         name: task,
+         deadline: dueDate,
+         priority,
+         headers: {
+            jwt: localStorage.getItem('jwt'),
+         },
+      };
       e.preventDefault();
-      // axios
-      //    .post(`${process.env.REACT_APP_SERVER}/user/project`, {
-      //       headers: {
-      //          jwt: localStorage.getItem('jwt'),
-      //       },
-      //       body: data,
-      //    })
-      //    .then(res => {
-      //       console.log(res);
-      //    })
-      //    .catch(err => {
-      //       console.log(err);
-      //       history.push('/');
-      //    });
+      axios
+         .post(`${process.env.REACT_APP_SERVER}/user/task`, data)
+         .then(res => {
+            console.log('post task:', res.data);
+         })
+         .catch(err => {
+            console.log(err);
+            history.push('/');
+         });
    };
    const [task, setTask] = useState('');
    const [dueDate, setDueDate] = useState('');
    const [priority, setPriority] = useState([]);
-   console.log(priority);
    return (
       <div className="app-parent">
          <div className="welcome-body">

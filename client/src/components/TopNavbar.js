@@ -24,7 +24,7 @@ const TopNavbar = () => {
    }, []);
    return (
       <div className="top-navbar-parent">
-         <div className="company-name">Skaber</div>
+         <div className="company-name">Skaber.Space</div>
          <div className="title-class">{title}</div>
          <div className="profile">
             <div className="profile-pic"></div>

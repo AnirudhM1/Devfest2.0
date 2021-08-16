@@ -2,30 +2,39 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import TopNavbar from './TopNavbar';
 import './Message.css';
-// import axios from 'axios';
-// import { useHistory } from 'react-router';
+import axios from 'axios';
+import { useHistory } from 'react-router';
+import useFetch from '../Hooks/useFetch';
 const Message = () => {
-   // const history = useHistory();
+   const history = useHistory();
    const [composeTo, setComposeTo] = useState('');
    const [header, setHeader] = useState('');
    const [composeBody, setComposeBody] = useState('');
+   const [error, setError] = useState('');
+   const url = `${process.env.REACT_APP_SERVER}/user/message/sent`;
+   const [outbox, err] = useFetch(url);
+   console.log({ outbox });
+   console.log({ err });
    const handleSubmit = e => {
-      // const data = { PName, CName, date, desc, budget };
+      const data = { recipient: composeTo, header, message: composeBody };
       e.preventDefault();
-      // axios
-      //    .post(`${process.env.REACT_APP_SERVER}/user/project`, {
-      //       headers: {
-      //          jwt: localStorage.getItem('jwt'),
-      //       },
-      //       body: data,
-      //    })
-      //    .then(res => {
-      //       console.log(res);
-      //    })
-      //    .catch(err => {
-      //       console.log(err);
-      //       history.push('/');
-      //    });
+      axios
+         .post(`${process.env.REACT_APP_SERVER}/user/message/sent`, {
+            headers: {
+               jwt: localStorage.getItem('jwt'),
+            },
+            body: data,
+         })
+         .then(res => {
+            console.log({ res });
+         })
+         .catch(err => {
+            if (err.response.status === 400) {
+               setError(err.response.data.message);
+            } else {
+               history.push('/');
+            }
+         });
    };
    return (
       <div className="app-parent">
@@ -51,6 +60,7 @@ const Message = () => {
                               <div className="compose-form-body">
                                  <div className="to-input-container">
                                     <div className="to-input">
+                                       {error}
                                        <label>To</label>
                                        <input
                                           type="text"

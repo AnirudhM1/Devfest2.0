@@ -3,6 +3,7 @@ const Task = require("../models/Task");
 const { info } = require("../util/Info");
 
 module.exports.getAllProjects = async (req, res) => {
+  console.log("Request recieved");
   const jwt = req.headers.jwt;
   const user = await info(jwt);
   const projects = await Project.find({ user: user.id });
@@ -12,7 +13,10 @@ module.exports.getAllProjects = async (req, res) => {
 module.exports.createProject = async (req, res) => {
   const jwt = req.body.headers.jwt;
   const user = await info(jwt);
+  console.log({ user });
   const { name, client, description, deadline, budget } = req.body;
+  console.log({ body: req.body });
+  console.log({ name, client, description, deadline, budget });
   const status = req.body.status || 0;
   const tasks = [];
   const currentSpending = req.body.currentSpending || 0;
@@ -108,6 +112,7 @@ module.exports.updateProject = async (req, res) => {
 };
 
 module.exports.getAllTasks = async (req, res) => {
+  console.log("All tasks request recieved");
   const jwt = req.headers.jwt;
   const user = await info(jwt);
   const { projectId } = req.params;
@@ -122,19 +127,18 @@ module.exports.getAllTasks = async (req, res) => {
 };
 
 module.exports.createTask = async (req, res) => {
+  console.log("Request recieved");
   const jwt = req.body.headers.jwt;
   const user = await info(jwt);
   const { projectId } = req.params;
   const project = await Project.findById(projectId);
-  console.log({ project });
-  console.log(user.id);
-  console.log(project.user);
   if (project.user != user.id) {
     const e = new Error("Not Authenticated");
     e.status = 401;
     throw e;
   }
   const name = req.body.name;
+  console.log({ name });
   const status = req.body.status || 0;
   const description = req.body.description || null;
   const priority = req.body.priority || "unrated";
@@ -147,8 +151,10 @@ module.exports.createTask = async (req, res) => {
     priority,
     deadline,
   });
+  console.log({ task });
   project.tasks.push(task);
-  await task.save();
+  const savedTask = await task.save();
   await project.save();
+  console.log(savedTask);
   res.send(task);
 };

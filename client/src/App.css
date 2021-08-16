@@ -78,3 +78,9 @@
    background-color: rgba(167, 197, 253, 0.418);
    height: 48%;
 }
+
+.main-sub-heading {
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+   font-size: 5vh;
+}

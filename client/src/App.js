@@ -3,9 +3,13 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import { useHistory } from 'react-router-dom';
 import TopNavbar from './components/TopNavbar';
+import useFetch from './Hooks/useFetch';
 
 function App() {
    const history = useHistory();
+   const url = `${process.env.REACT_APP_SERVER}/user/project`;
+   const [project, error] = useFetch(url);
+   console.log(error);
    return (
       <div className="app-parent">
          <div className="welcome-body">
@@ -18,7 +22,9 @@ function App() {
                </div>
                <div className="welcome-card-body">
                   <div className="welcome-and-message-parent">
-                     <div className="welcomeCard">Welcome User to Skaber</div>
+                     <div className="welcomeCard">
+                        Welcome Namehere, to Skaber
+                     </div>
                      <div
                         className="messagesCard"
                         onClick={() => {
@@ -37,7 +43,24 @@ function App() {
                         className="projectsCard"
                      >
                         <div className="main-sub-heading">Project</div>
-                        <div className="project-card-body">database</div>
+                        <div className="project-card-body">
+                           {project &&
+                              project.map(search => {
+                                 return (
+                                    <div
+                                       className="ongoing-body"
+                                       key={search.id}
+                                    >
+                                       <div className="fetched-project-name">
+                                          {search.name}
+                                       </div>
+                                       <div className="fetched-due-date">
+                                          {search.deadline.slice(0, 10)}
+                                       </div>
+                                    </div>
+                                 );
+                              })}
+                        </div>
                      </div>
                      <div
                         onClick={() => {
@@ -56,7 +79,7 @@ function App() {
                      className="reminder"
                   >
                      <div className="main-sub-heading">
-                        Events and Reminders
+                        Tasks, Events and Reminders
                      </div>
                      <div className="event-card-body">database</div>
                   </div>

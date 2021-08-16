@@ -23,7 +23,8 @@ function App() {
                <div className="welcome-card-body">
                   <div className="welcome-and-message-parent">
                      <div className="welcomeCard">
-                        Welcome Namehere, to Skaber
+                        <h2> Welcome to Skaber.Space</h2> Manage and track all
+                        your activies as a creator!
                      </div>
                      <div
                         className="messagesCard"
@@ -79,7 +80,7 @@ function App() {
                      className="reminder"
                   >
                      <div className="main-sub-heading">
-                        Tasks, Events and Reminders
+                        Tasks, Events & Reminders
                      </div>
                      <div className="event-card-body">database</div>
                   </div>

@@ -15,24 +15,36 @@
 }
 
 .selected {
-   background-color: rgba(238, 137, 221, 0.267);
+   background-color: rgba(184, 236, 245, 0.171);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(255, 255, 255, 0.19);
+   border-radius: 25px;
    height: 61%;
    margin-bottom: 2.5%;
 }
 
 .compose-container {
-   background-color: rgba(238, 137, 221, 0.267);
+   background-color: rgba(184, 236, 245, 0.171);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(255, 255, 255, 0.19);
+   border-radius: 25px;
    height: 36.5%;
 }
 
 .inbox-container {
-   background-color: rgba(153, 245, 153, 0.267);
+   background-color: rgba(184, 236, 245, 0.171);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(255, 255, 255, 0.19);
+   border-radius: 25px;
    height: 50%;
    margin-bottom: 5%;
 }
 
 .outbox-container {
-   background-color: rgba(153, 245, 153, 0.267);
+   background-color: rgba(184, 236, 245, 0.171);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(255, 255, 255, 0.19);
+   border-radius: 25px;
    height: 46%;
 }
 .compose-form-body {

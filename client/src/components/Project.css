@@ -18,7 +18,10 @@
 }
 .current {
    width: 48%;
-   background-color: rgba(148, 173, 221, 0.418);
+   background-color: rgba(184, 236, 245, 0.171);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(255, 255, 255, 0.19);
+   border-radius: 25px;
    margin-left: 2%;
    height: 100%;
 }
@@ -26,7 +29,10 @@
 .ongoing {
    width: 46%;
    margin-left: 2%;
-   background-color: rgba(148, 173, 221, 0.418);
+   background-color: rgba(184, 236, 245, 0.171);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(255, 255, 255, 0.19);
+   border-radius: 25px;
    height: 100%;
 }
 
@@ -35,7 +41,10 @@
 }
 
 .input-project {
-   background-color: rgba(148, 173, 221, 0.418);
+   background-color: rgba(184, 236, 245, 0.171);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(255, 255, 255, 0.19);
+   border-radius: 25px;
    margin-left: 2%;
    margin-top: 2%;
    width: 96%;

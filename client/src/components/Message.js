@@ -12,9 +12,13 @@ const Message = () => {
    const [composeBody, setComposeBody] = useState('');
    const [error, setError] = useState('');
    const url = `${process.env.REACT_APP_SERVER}/user/message/sent`;
-   const [outbox, err] = useFetch(url);
+   const [outbox, oerr] = useFetch(url);
    console.log({ outbox });
-   console.log({ err });
+   console.log({ oerr });
+   const urli = `${process.env.REACT_APP_SERVER}/user/message/incoming`;
+   const [inbox, ierr] = useFetch(urli);
+   console.log({ inbox });
+   console.log({ ierr });
    const handleSubmit = e => {
       const data = { recipient: composeTo, header, message: composeBody };
       e.preventDefault();

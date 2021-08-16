@@ -28,7 +28,8 @@ const Schedule = () => {
    };
    const [task, setTask] = useState('');
    const [dueDate, setDueDate] = useState('');
-   const [priority, setPriority] = useState([]);
+   const [priority, setPriority] = useState('');
+   console.log(priority);
    return (
       <div className="app-parent">
          <div className="welcome-body">
@@ -93,25 +94,21 @@ const Schedule = () => {
                                  <label>Set Priority</label>
                               </div>
                               <input
-                                 type="checkbox"
-                                 name="urgent"
+                                 type="radio"
+                                 name="priority"
                                  value="urgent"
-                                 onClick={() =>
-                                    setPriority(prevValue => {
-                                       return [...prevValue, 'urgent'];
-                                    })
-                                 }
+                                 onClick={() => {
+                                    setPriority('urgent');
+                                 }}
                               ></input>
                               <label> Urgent</label>
                               <input
-                                 type="checkbox"
-                                 name="important"
+                                 type="radio"
+                                 name="priority"
                                  value="important"
-                                 onClick={() =>
-                                    setPriority(prevValue => {
-                                       return [...prevValue, 'important'];
-                                    })
-                                 }
+                                 onClick={() => {
+                                    setPriority('important');
+                                 }}
                               ></input>
                               <label> Important</label>
                               <div className="button">

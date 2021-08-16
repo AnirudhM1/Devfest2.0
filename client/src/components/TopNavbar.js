@@ -30,7 +30,6 @@ const TopNavbar = () => {
             <div className="profile-pic"></div>
             <div className="profile-name">
                <i className="fas fa-user-circle"></i> User Name{' '}
-               <i className="fas fa-power-off"></i>
             </div>
          </div>
       </div>

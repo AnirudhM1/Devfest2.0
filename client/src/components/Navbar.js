@@ -7,10 +7,11 @@ const Navbar = () => {
       <div className="main-parent">
          <div className="logo">
             <img
-               src="https://storage.googleapis.com/restro/A0.png"
+               src="https://storage.googleapis.com/restro/SkaberLogo.png"
                alt="logo"
-               height="100px"
-               width="100px"
+               height="60px"
+               width="40px"
+               align="center"
             />
          </div>
          <div className="navbar-export">
@@ -21,7 +22,7 @@ const Navbar = () => {
                }}
             >
                <i className="fas fa-home fa-2x"></i>
-               Home
+               Insights
             </div>
             <div
                className="links"
@@ -29,7 +30,7 @@ const Navbar = () => {
                   history.push('/project');
                }}
             >
-               <i className="fas fa-chart-pie fa-2x"></i>Project
+               <i className="fas fa-chart-pie fa-2x"></i>Projects
             </div>
             <div
                className="links"
@@ -57,7 +58,7 @@ const Navbar = () => {
             </div>
          </div>
          <div className="log-out">
-            <i className="fas fa-power-off fa-2x"></i>logout
+            <i className="fas fa-power-off"></i>Logout
          </div>
       </div>
    );

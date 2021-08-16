@@ -1,9 +1,17 @@
-const router = ("express").Router();
-const {authCheck} = require("../config/oauth");
+const router = require("express").Router();
+const {
+  getIncoming,
+  getSent,
+  postSent,
+  postIncoming,
+} = require("../controllers/message");
+const { authCheck } = require("../config/oauth");
 
-router.get("/incoming");
-router.get("/sent");
-router.post("/sent");
-router.post("/incoming");
+router.use(authCheck);
 
-module.exports= router;
+router.get("/incoming", getIncoming);
+router.get("/sent", getSent);
+router.post("/sent", postSent);
+router.post("/incoming", postIncoming);
+
+module.exports = router;

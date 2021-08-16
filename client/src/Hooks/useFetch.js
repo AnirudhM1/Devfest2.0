@@ -2,25 +2,26 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const useFetch = url => {
-   console.log('req recieved:', url);
-   const [data, setData] = useState(false);
-   const [err, setErr] = useState(true);
+   const [data, setData] = useState(null);
+   const [error, setError] = useState(null);
+
    useEffect(() => {
-      console.log('after use effect');
       axios
-         .get(url, { headers: { jwt: localStorage.getItem('jwt') } })
+         .get(url, {
+            headers: {
+               jwt: localStorage.getItem('jwt'),
+            },
+         })
          .then(res => {
             setData(res.data);
-            setErr(false);
+            setError(null);
          })
          .catch(err => {
-            console.error(err);
-            setData(null);
-            setErr(true);
+            setError(err.message);
          });
-      console.log({ data, err });
-      return [data, err];
    }, [url]);
+
+   return [data, error];
 };
 
 export default useFetch;

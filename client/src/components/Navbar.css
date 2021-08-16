@@ -11,13 +11,17 @@
 }
 .logo {
    height: 16%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 10px;
 }
 .log-out {
    margin-top: 0px;
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding-bottom: 22px;
+   padding-bottom: 10px;
    height: 8%;
 }
 

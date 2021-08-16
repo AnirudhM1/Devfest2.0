@@ -6,7 +6,7 @@ const expenseController = require("../controllers/Expense");
 router
   .route("/")
   .get(authCheck, expenseController.getExpenses)
-  .post(authCheck, expenseController.createExpense);
+  .post(authCheck, expenseController.createExpenses);
 
 router.post("/:expenseId", authCheck, expenseController.updateExpense);
 

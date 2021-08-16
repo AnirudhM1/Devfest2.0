@@ -39,7 +39,6 @@ module.exports.getSent = async (req, res, next) => {
       },
     ];
     const docs = await Message.aggregate(pipeline);
-    // const docs = await Message.aggregate(pipeline);
     res.status(200).json({ docs, id });
   } catch (error) {
     next(error);

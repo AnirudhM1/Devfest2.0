@@ -24,7 +24,8 @@ function App() {
                   <div className="welcome-and-message-parent">
                      <div className="welcomeCard">
                         <h2> Welcome to Skaber.Space</h2> Manage and track all
-                        your activies as a creator on a single portal!
+                        your activies as a creator, your one stop solution to
+                        everything!
                      </div>
                      <div
                         className="messagesCard"

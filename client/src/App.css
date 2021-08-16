@@ -50,6 +50,7 @@
    border-radius: 25px;
    height: 100%;
    margin-left: 2%;
+   padding: 4vh;
 }
 .welcome-and-message-parent {
    width: 33%;
@@ -80,6 +81,7 @@
       0 6px 20px 0 rgba(255, 255, 255, 0.19);
    border-radius: 25px;
    height: 65%;
+   padding: 4vh;
 }
 
 .projectsCard {
@@ -89,6 +91,7 @@
    border-radius: 25px;
    height: 48%;
    margin-bottom: 4%;
+   padding: 4vh;
 }
 
 .expensesCard {
@@ -97,10 +100,11 @@
       0 6px 20px 0 rgba(255, 255, 255, 0.19);
    border-radius: 25px;
    height: 48%;
+   padding: 4vh;
 }
 
 .main-sub-heading {
-   font-family: 'Roboto', sans-serif;
-   font-weight: 400;
+   font-family: 'Titillium Web', sans-serif;
+   font-weight: 300;
    font-size: 5vh;
 }

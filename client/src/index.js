@@ -8,26 +8,28 @@ import Project from './components/Project';
 import Schedule from './components/Schedule';
 import Expense from './components/Expense';
 import Message from './components/Message';
-// import AuthProvider from './Hooks/AuthProvider';
+import AuthProvider from './Hooks/AuthProvider';
 ReactDOM.render(
    <React.StrictMode>
       <Router>
          <Switch>
-            <Route path="/app">
-               <App />
-            </Route>
-            <Route path="/project">
-               <Project />
-            </Route>
-            <Route path="/schedule">
-               <Schedule />
-            </Route>
-            <Route path="/expense">
-               <Expense />
-            </Route>
-            <Route path="/message">
-               <Message />
-            </Route>
+            <AuthProvider>
+               <Route path="/app">
+                  <App />
+               </Route>
+               <Route path="/project">
+                  <Project />
+               </Route>
+               <Route path="/schedule">
+                  <Schedule />
+               </Route>
+               <Route path="/expense">
+                  <Expense />
+               </Route>
+               <Route path="/message">
+                  <Message />
+               </Route>
+            </AuthProvider>
          </Switch>
       </Router>
    </React.StrictMode>,

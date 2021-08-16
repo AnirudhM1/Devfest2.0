@@ -34,6 +34,8 @@
       0 6px 20px 0 rgba(255, 255, 255, 0.19);
    border-radius: 25px;
    height: 100%;
+   padding: 100px;
+   overflow-y: scroll;
 }
 
 .other-details {
@@ -58,4 +60,17 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
+}
+
+.sub-heading {
+   font-family: 'Titillium Web', sans-serif;
+   font-weight: 300;
+   font-size: 5vh;
+}
+
+.addNewProject {
+   font-family: 'Titillium Web', sans-serif;
+   font-weight: 600;
+   font-size: 3vh;
+   padding-left: 5vh;
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-// import { useAuth } from '../Hooks/AuthProvider';
+import { useAuth } from '../Hooks/AuthProvider';
 import './Navbar.css';
 const Navbar = () => {
    const history = useHistory();
-   // const setAuth = useAuth();
+   const setAuth = useAuth();
    return (
       <div className="main-parent">
          <div className="logo">
@@ -61,11 +61,11 @@ const Navbar = () => {
          </div>
          <div
             className="log-out"
-            // onClick={() => {
-            //    localStorage.removeItem('jwt');
-            //    setAuth(false);
-            //    history.push('/');
-            // }}
+            onClick={() => {
+               localStorage.removeItem('jwt');
+               setAuth(false);
+               history.push('/');
+            }}
          >
             <i className="fas fa-power-off"></i>Logout
          </div>

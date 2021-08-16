@@ -29,7 +29,6 @@ const Schedule = () => {
    const [task, setTask] = useState('');
    const [dueDate, setDueDate] = useState('');
    const [priority, setPriority] = useState('');
-   console.log(priority);
    return (
       <div className="app-parent">
          <div className="welcome-body">

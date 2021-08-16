@@ -32,6 +32,9 @@ module.exports.postMessage = async (req, res, next) => {
     const { id } = await info(req.body.headers.jwt);
     const sender = await User.findById(id);
 
+    console.log(composeTo);
+    console.log({ sender, recipient });
+
     const message = new Message({
       sender: sender,
       recipient: recipient,

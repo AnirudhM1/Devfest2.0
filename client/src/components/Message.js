@@ -4,31 +4,33 @@ import TopNavbar from './TopNavbar';
 import './Message.css';
 import axios from 'axios';
 import { useHistory } from 'react-router';
-import useFetch from '../Hooks/useFetch';
+// import useFetch from '../Hooks/useFetch';
 const Message = () => {
    const history = useHistory();
    const [composeTo, setComposeTo] = useState('');
    const [header, setHeader] = useState('');
    const [composeBody, setComposeBody] = useState('');
    const [error, setError] = useState('');
-   const url = `${process.env.REACT_APP_SERVER}/user/message/sent`;
-   const [outbox, oerr] = useFetch(url);
-   console.log({ outbox });
-   console.log({ oerr });
-   const urli = `${process.env.REACT_APP_SERVER}/user/message/incoming`;
-   const [inbox, ierr] = useFetch(urli);
-   console.log({ inbox });
-   console.log({ ierr });
+   // const url = `${process.env.REACT_APP_SERVER}/user/message/sent`;
+   // const [outbox, oerr] = useFetch(url);
+   // console.log({ outbox });
+   // console.log({ oerr });
+   // const urli = `${process.env.REACT_APP_SERVER}/user/message/incoming`;
+   // const [inbox, ierr] = useFetch(urli);
+   // console.log({ inbox });
+   // console.log({ ierr });
    const handleSubmit = e => {
-      const data = { recipient: composeTo, header, message: composeBody };
+      const data = {
+         recipient: composeTo,
+         header,
+         message: composeBody,
+         headers: {
+            jwt: localStorage.getItem('jwt'),
+         },
+      };
       e.preventDefault();
       axios
-         .post(`${process.env.REACT_APP_SERVER}/user/message/sent`, {
-            headers: {
-               jwt: localStorage.getItem('jwt'),
-            },
-            body: data,
-         })
+         .post(`${process.env.REACT_APP_SERVER}/user/message`, data)
          .then(res => {
             console.log({ res });
          })

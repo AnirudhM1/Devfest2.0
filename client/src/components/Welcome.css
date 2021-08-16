@@ -1,0 +1,28 @@
+.welcome {
+   font-weight: 900;
+   font-size: 6vh;
+   font-family: 'Lobster Two', cursive;
+   font-weight: 700;
+   font-style: bold;
+}
+
+.welcome-body {
+   padding: 20px;
+}
+
+.com-name {
+   font-weight: 900;
+   font-size: 20vh;
+   font-family: 'Lobster Two', cursive;
+   font-weight: 700;
+   font-style: bold;
+   color: rgb(202, 162, 116);
+}
+.flexing {
+   display: flex;
+   justify-content: center;
+}
+.log-link {
+   margin: 20px;
+   text-decoration: none;
+}

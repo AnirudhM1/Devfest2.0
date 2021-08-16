@@ -103,7 +103,9 @@ const Project = () => {
                <div className="project-body">
                   <div className="current-and-ongoing">
                      <div className="current">
-                        <div className="sub-heading">{cProjectName}</div>
+                        <div className="sub-heading">
+                           Selected: {cProjectName}
+                        </div>
                         <div className="current-body-div">
                            <div className="fetched-desc">{cProjectDesc}</div>
                            <div className="other-details">
